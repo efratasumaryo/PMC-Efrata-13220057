@@ -7,6 +7,7 @@ int main(){
     int c = 4;
     
     while(1 == 1){
+        //it
         printf("ember 3 liter       ember 5 liter\n");
         printf("      %d                  %d\n",a,b);
         printf("Pilih no instruksi\n");
@@ -55,7 +56,10 @@ int main(){
             }
             
         }
-        if (a == 4 || b == 4){break;}
+        if (a == 4 || b == 4){
+            printf("Program ended");
+            break;
+            }
         }
         
     return 0;
