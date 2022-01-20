@@ -1,36 +1,70 @@
-// Program to create a simple calculator
 #include <stdio.h>
 
-int main() {
-    char operation;
-    double n1, n2;
+int main(){
+    int noInst = 0;
+    int a = 0;
+    int b = 0;
+    int c = 4;
+    
+    while(1 == 1){
+        //it
+        printf("ember 3 liter       ember 5 liter\n");
+        printf("      %d                  %d\n",a,b);
+        printf("Pilih no instruksi\n");
+        printf("1. isi ember 3 liter\n");
+        printf("2. isi ember 5 liter\n");
+        printf("3. kosongkan ember 3 liter\n");
+        printf("4. kosongkan ember 5 liter\n");
+        printf("5. tuang isi ember 3 liter ke ember 5 liter\n");
+        printf("6. tuang isi ember 5 liter ke ember 3 liter\n");
+        printf("\n");
+        printf("Nomor instruksi yang dipilih: ");
+        scanf("%c", &noInst);
+        printf("\n");
 
-    printf("Enter an operator (+, -, *, /): ");
-    scanf("%c", &operation);
-    printf("Enter two operands: ");
-    scanf("%lf %lf",&n1, &n2);
-
-    switch(operation)
-    {
-        case '+':
-            printf("%.1lf + %.1lf = %.1lf",n1, n2, n1+n2);
-
-        case '-':
-            printf("%.1lf - %.1lf = %.1lf",n1, n2, n1-n2);
+        switch(noInst)
+        {
+            case '1':
+                a = 3;
+                break;
+            case '2':
+                b = 5;
+                break;
+            case '3':
+                a = 0;
+                break;
+            case '4':
+                b = 0;
+                break;
+            case '5':
+                if (a+b >= 5){
+                a = (a+b)-5;
+                b = 5;
+                }
+                else{
+                b = a + b;
+                a = 0;
+                }
+                break;
+            case '6':
+                if (a+b >= 3){
+                b = (b+a)-3;
+                a = 3;
+                }
+                else{
+                int e = a;
+                a = b + a;
+                b = b - (a - e);
+                }
+        }
+        
+        if (a == 4 || b == 4){
+            printf("Program ended");
             break;
-
-        case '*':
-            printf("%.1lf * %.1lf = %.1lf",n1, n2, n1*n2);
-            break;
-
-        case '/':
-            printf("%.1lf / %.1lf = %.1lf",n1, n2, n1/n2);
-            break;
-
-        // operator doesn't match any case constant +, -, *, /
-        default:
-            printf("Error! operator is not correct");
+            }
+        }
+        
+    return 0;
     }
 
-    return 0;
-}
+    
