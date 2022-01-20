@@ -19,43 +19,45 @@ int main(){
         printf("6. tuang isi ember 5 liter ke ember 3 liter\n");
         printf("\n");
         printf("Nomor instruksi yang dipilih: ");
-        scanf("%d", &noInst);
+        scanf("%c", &noInst);
         printf("\n");
 
-        if (noInst == 1){
-            a = 3;
-        }
-        else if (noInst == 2){
-            b = 5;
-        }
-        else if (noInst == 3) {
-            a = 0;
-        }
-        else if (noInst == 4) {
-            b = 0;
-        } 
-        else if (noInst == 5) {
-            if (a+b >= 5){
+        switch(noInst)
+        {
+            case '1':
+                a = 3;
+                break;
+            case '2':
+                b = 5;
+                break;
+            case '3':
+                a = 0;
+                break;
+            case '4':
+                b = 0;
+                break;
+            case '5':
+                if (a+b >= 5){
                 a = (a+b)-5;
                 b = 5;
-            }
-            else{
+                }
+                else{
                 b = a + b;
                 a = 0;
-            }
-            
-        } else {
-            if (a+b >= 3){
+                }
+                break;
+            case '6':
+                if (a+b >= 3){
                 b = (b+a)-3;
                 a = 3;
-            }
-            else{
+                }
+                else{
                 int e = a;
                 a = b + a;
                 b = b - (a - e);
-            }
-            
+                }
         }
+        
         if (a == 4 || b == 4){
             printf("Program ended");
             break;
