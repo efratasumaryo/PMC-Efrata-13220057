@@ -6,7 +6,8 @@ int main(){
     int b = 0;
     int c = 4;
     
-    while(1 == 1){
+    while(1 == 1) //sama seperti while true
+    { 
         printf("ember 3 liter       ember 5 liter\n");
         printf("      %d                  %d\n",a,b);
         printf("Pilih no instruksi\n");
@@ -36,7 +37,7 @@ int main(){
                 b = 0;
                 break;
             case '5':
-                if (a+b >= 5){
+                if (a+b >= 5){ //saat kondisi ember b penuh
                 a = (a+b)-5;
                 b = 5;
                 }
@@ -46,7 +47,7 @@ int main(){
                 }
                 break;
             case '6':
-                if (a+b >= 3){
+                if (a+b >= 3){ //saat kondisi ember a penuh
                 b = (b+a)-3;
                 a = 3;
                 }
@@ -57,7 +58,7 @@ int main(){
                 }
         }
         
-        if (a == 4 || b == 4){
+        if (a == 4 || b == 4){ //kondisi untuk menyelesaikan loop
             printf("Program ended");
             break;
             }
