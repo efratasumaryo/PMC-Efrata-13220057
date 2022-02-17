@@ -26,6 +26,18 @@ int main(){
     (tes[5]==0x0A) && (tes[6]==0x1A) && (tes[7]==0x0A)){
         printf("file merupakan png");
     }
-    //jpg
+    //jpg FF D8 FF DB
+    //    FF D8 FF E0 00 10 4A 46 49 46 00 01
+    else if(((tes[0]==0xFF) && (tes[1]==0xD8) && (tes[2]==0xFF) && (tes[3]==0xDB)) || ((tes[3]==0xE0) && 
+    (tes[4]==0x00) && (tes[5]==0x10) && (tes[6]==0x4A) && (tes[7]==0x46) && (tes[8]==0x49) && (tes[9]==0x46)
+    (tes[10]==0x00) && (tes[11]==0x01))){
+        printf("file merupakan jpg");
+    }
+    else{
+        printf("file bukan png atau jpg atau pdf");
+    }
+
+    fclose(file);
+
     return 0;
 }
